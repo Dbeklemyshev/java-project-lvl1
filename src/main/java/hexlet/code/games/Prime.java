@@ -28,9 +28,9 @@ public class Prime {
         return roundData;
     }
     private static boolean calculateIsPrime(int number) {
-        for(int i =2; i<number; i++){
-            if(number%i==0){
-               return false;
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
             }
         } return true;
 
