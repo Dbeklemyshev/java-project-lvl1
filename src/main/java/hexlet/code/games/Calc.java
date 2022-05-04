@@ -7,25 +7,20 @@ import hexlet.code.Utils;
 
 public class Calc {
     public static final String ENTER_TEXT = "What is the result of the expression?";
-    private static char[] operationArray = {'+', '-', '*'};
+    private static final char[] operationArray = {'+', '-', '*'};
 
     public static void playGame() {
         Engine.runGame(ENTER_TEXT, getGameData());
     }
 
     private static int calculate(int input1, int input2, char operation) {
-        switch (operation) {
-            case '+':
-                return input1 + input2;
-            case '-':
-                return input1 - input2;
-            case '/':
-                return input1 / input2;
-            case '*':
-                return input1 * input2;
-            default:
-                return Integer.MIN_VALUE;
-        }
+        return switch (operation) {
+            case '+' -> input1 + input2;
+            case '-' -> input1 - input2;
+            case '/' -> input1 / input2;
+            case '*' -> input1 * input2;
+            default -> Integer.MIN_VALUE;
+        };
     }
 
     private static char getOperation() {
