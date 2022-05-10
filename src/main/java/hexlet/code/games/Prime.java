@@ -2,22 +2,21 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
 import static hexlet.code.games.Even.ANSWER_NO;
 import static hexlet.code.games.Even.ANSWER_YES;
 
 
 public class Prime {
-    public static final String ENTER_TEXT = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
-    public static void playGame() {
-        Engine.runGame(ENTER_TEXT, getGameData());
+    public static final String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static final int RANGE_LIMIT_1 = 1;
+    public static final int RANGE_LIMIT_100 = 100;
+    public static void runGame() {
+        Engine.runGame(GAME_DESCRIPTION, getGameData());
     }
     private static String[] generateRoundData() {
-
         String[] roundData = new String[2];
         String trueAnswer;
-        int number1 = Utils.getRandom(Utils.RANGE_LIMIT_1, Utils.RANGE_LIMIT_100);
+        int number1 = Utils.generateRandomNumber(RANGE_LIMIT_1, RANGE_LIMIT_100);
         if (calculateIsPrime(number1)) {
             trueAnswer = ANSWER_YES;
         } else {

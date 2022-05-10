@@ -1,10 +1,10 @@
 package hexlet.code;
+
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-
 import java.util.Scanner;
 
 public class App {
@@ -28,20 +28,18 @@ public class App {
         Scanner mainScanner = new Scanner(System.in);
         System.out.println(MENU_INFO);
         System.out.print(MENU_GAMES);
-        playGame(mainScanner);
-        mainScanner.close();
-    }
-
-    public static void playGame(Scanner mainScanner) {
-        switch (mainScanner.nextInt()) {
+        int selectedGame = mainScanner.nextInt();
+        switch (selectedGame) {
             case GREET_NM -> Cli.welcome();
-            case EVEN_NM -> Even.playGame();
-            case CALC_NM -> Calc.playGame();
-            case GDC_NM -> GCD.playGame();
-            case PROGRESSION_NM -> Progression.playGame();
-            case PRIME_NM -> Prime.playGame();
-            default -> {
-            }
+            case EVEN_NM -> Even.runGame();
+            case CALC_NM -> Calc.runGame();
+            case GDC_NM -> GCD.runGame();
+            case PROGRESSION_NM -> Progression.runGame();
+            case PRIME_NM -> Prime.runGame();
+            case 0 -> { }
+            default -> System.out.print("game with number " + selectedGame + " not found!");
+
         }
+        mainScanner.close();
     }
 }

@@ -4,11 +4,14 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Progression {
-    public static final String START_TEXT = "What number is missing in this progression?";
+    public static final String GAME_DESCRIPTION = "What number is missing in this progression?";
     public static final int ARRAY_LENGTH = 10;
+    public static final int RANGE_LIMIT_0 = 0;
+    public static final int RANGE_LIMIT_100 = 100;
+    public static final int RANGE_LIMIT_10 = 10;
 
-    public static void playGame() {
-        Engine.runGame(START_TEXT, getGameData());
+    public static void runGame() {
+        Engine.runGame(GAME_DESCRIPTION, getGameData());
     }
 
     private static String getQuestion(int[] array, int missNumber) {
@@ -36,10 +39,10 @@ public class Progression {
 
     private static String[] generateRoundData() {
         String[] roundData = new String[2];
-        int diffValue = Utils.getRandom(Utils.RANGE_LIMIT_0, Utils.RANGE_LIMIT_10);
-        int toMissArrayIndex = Utils.getRandom(Utils.RANGE_LIMIT_0, ARRAY_LENGTH - 1);
+        int diffValue = Utils.generateRandomNumber(RANGE_LIMIT_0, RANGE_LIMIT_10);
+        int toMissArrayIndex = Utils.generateRandomNumber(RANGE_LIMIT_0, ARRAY_LENGTH - 1);
         int[] array = new int[ARRAY_LENGTH];
-        array[0] = Utils.getRandom(Utils.RANGE_LIMIT_0, Utils.RANGE_LIMIT_100);
+        array[0] = Utils.generateRandomNumber(RANGE_LIMIT_0, RANGE_LIMIT_100);
         for (int i = 1; i < ARRAY_LENGTH; i++) {
             array[i] = array[i - 1] + diffValue;
         }

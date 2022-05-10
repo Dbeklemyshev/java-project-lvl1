@@ -1,10 +1,10 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import static hexlet.code.Engine.GREETING_TEXT;
+import static hexlet.code.Engine.QUESTION;
 
 public class Cli {
-    public static final String GREETING_TEXT = "Welcome to the Brain Games!";
-    public static final String QUESTION = "May I have your name? ";
 
     public static void welcome() {
         Scanner cliScanner = new Scanner(System.in);
