@@ -23,7 +23,6 @@ public class App {
             + PRIME_NM + " - Prime\n"
             + "0 - Exit\nYour choice: ";
 
-
     public static void main(String[] args) {
         Scanner mainScanner = new Scanner(System.in);
         System.out.println(MENU_INFO);

@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import java.util.Arrays;
+
 public class Progression {
     public static final String GAME_DESCRIPTION = "What number is missing in this progression?";
     public static final int ARRAY_LENGTH = 10;
@@ -41,13 +43,20 @@ public class Progression {
         String[] roundData = new String[2];
         int diffValue = Utils.generateRandomNumber(RANGE_LIMIT_0, RANGE_LIMIT_10);
         int toMissArrayIndex = Utils.generateRandomNumber(RANGE_LIMIT_0, ARRAY_LENGTH - 1);
-        int[] array = new int[ARRAY_LENGTH];
-        array[0] = Utils.generateRandomNumber(RANGE_LIMIT_0, RANGE_LIMIT_100);
-        for (int i = 1; i < ARRAY_LENGTH; i++) {
-            array[i] = array[i - 1] + diffValue;
-        }
+        int startValue = Utils.generateRandomNumber(RANGE_LIMIT_0, RANGE_LIMIT_100);
+        int[] array = generateProgression(startValue, diffValue, ARRAY_LENGTH);
         roundData[0] = getQuestion(array, toMissArrayIndex);
         roundData[1] = Integer.toString(array[toMissArrayIndex]);
         return roundData;
+    }
+
+    private static int[] generateProgression(int startValue, int diffValue, int arrLength) {
+        int[] array = new int[arrLength];
+        array[0] = startValue;
+        for (int i = 1; i < arrLength; i++) {
+            array[i] = array[i - 1] + diffValue;
+        }
+        System.out.println("RESULT ARRAY: " + Arrays.toString(array));
+        return array;
     }
 }

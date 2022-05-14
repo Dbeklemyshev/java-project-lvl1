@@ -5,7 +5,6 @@ import static hexlet.code.Engine.GREETING_TEXT;
 import static hexlet.code.Engine.QUESTION;
 
 public class Cli {
-
     public static void welcome() {
         Scanner cliScanner = new Scanner(System.in);
         String userName;

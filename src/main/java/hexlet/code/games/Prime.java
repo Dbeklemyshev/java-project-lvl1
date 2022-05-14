@@ -5,14 +5,15 @@ import hexlet.code.Utils;
 import static hexlet.code.games.Even.ANSWER_NO;
 import static hexlet.code.games.Even.ANSWER_YES;
 
-
 public class Prime {
     public static final String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static final int RANGE_LIMIT_1 = 1;
     public static final int RANGE_LIMIT_100 = 100;
+
     public static void runGame() {
         Engine.runGame(GAME_DESCRIPTION, getGameData());
     }
+
     private static String[] generateRoundData() {
         String[] roundData = new String[2];
         String trueAnswer;
@@ -26,6 +27,7 @@ public class Prime {
         roundData[1] = trueAnswer;
         return roundData;
     }
+
     private static boolean calculateIsPrime(int number) {
         if (number < 2) {
             return false;
@@ -34,8 +36,8 @@ public class Prime {
             if (number % i == 0) {
                 return false;
             }
-        } return true;
-
+        }
+        return true;
     }
 
     private static String[][] getGameData() {

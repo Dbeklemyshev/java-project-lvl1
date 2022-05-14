@@ -20,14 +20,13 @@ public class Engine {
             String answer = questionData[1];
             System.out.print("Question: " + question + "\nYour answer: ");
             String gamerAnswer = engineScanner.nextLine();
-            if (gamerAnswer.equals(answer)) {
-                System.out.println("Correct!");
-            } else {
+            if (!gamerAnswer.equals(answer)) {
                 System.out.print("'" + gamerAnswer + "' is wrong answer ;(. ");
                 System.out.println("Let's try again, " + gamerName + "!");
                 engineScanner.close();
                 return;
             }
+            System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + gamerName + "!");
         engineScanner.close();
