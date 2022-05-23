@@ -18,7 +18,7 @@ public class Prime {
         String[] roundData = new String[2];
         String trueAnswer;
         int number1 = Utils.generateRandomNumber(RANGE_LIMIT_1, RANGE_LIMIT_100);
-        if (calculateIsPrime(number1)) {
+        if (isPrime(number1)) {
             trueAnswer = ANSWER_YES;
         } else {
             trueAnswer = ANSWER_NO;
@@ -28,7 +28,7 @@ public class Prime {
         return roundData;
     }
 
-    private static boolean calculateIsPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }
